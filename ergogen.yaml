@@ -1,0 +1,203 @@
+units:
+convert: 25.4
+u: 0.75 * convert
+visual_x: u
+visual_y: u
+
+points:
+  zones:
+    macros:
+      columns:
+        left:
+        right:
+      rows:
+        five:
+        four:
+        three:
+        two:
+        one:
+    alphas:
+      anchor:
+        ref: macros_right_five
+        shift: [u*1.5, 0]# TODO
+      columns:
+        lmods:
+          rows:
+            lalt:
+              width: 1.5
+              shift: [((u*1.5)-u)/2, 0]
+            lshift:
+              width: 2.25
+              shift: [((u*2.25)-u)/2, 0]# TODO - the mods have two posts, alpha-most is alpha aligned, other is some distance not defined by the width of the keycap necessarily
+            lctrl:
+              width: 1.75
+              shift: [((u*1.75)-u)/2, 0]
+            tab:
+              width: 1.5
+              shift: [((u*1.5)-u)/2, 0]
+            tilde:
+        alphas1:
+          rows:
+            _:
+              skip: true
+            z:
+              shift: [((u*2.25)-u), 0]
+            a:
+              shift: [((u*1.75)-u), 0]
+            q:
+              shift: [((u*1.5)-u), 0]
+            two:
+        alphas2:
+          rows:
+            _:
+              skip: true
+            x:
+              shift: [u*1.25, 0]
+            s:
+              shift: [u*0.75, 0]
+            w:
+              shift: [u*0.5, 0]
+            two:
+        alphas3:
+          rows:
+            _:
+              skip: true
+            c:
+              shift: [u*1.25, 0]
+            d:
+              shift: [u*0.75, 0]
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas4:
+          rows:
+            _:
+              skip: true
+            v:
+              shift: [u*1.25, 0]
+            f:
+              shift: [u*0.75, 0]
+            r:
+              shift: [u*0.5, 0]
+            four:
+        alphas5:
+          rows:
+            _:
+              skip: true
+            c:
+              shift: [u*1.25, 0]
+            d:
+              shift: [u*0.75, 0]
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas6:
+          rows:
+            _:
+              skip: true
+            c:
+              shift: [u*1.25, 0]
+            d:
+              shift: [u*0.75, 0]
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas7:
+          rows:
+            _:
+              skip: true
+            c:
+              shift: [u*1.25, 0]
+            d:
+              shift: [u*0.75, 0]
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas8:
+          rows:
+            _:
+              skip: true
+            c:
+              shift: [u*1.25, 0]
+            d:
+              shift: [u*0.75, 0]
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas9:
+          rows:
+            _:
+              skip: true
+            c:
+              shift: [u*1.25, 0]
+            d:
+              shift: [u*0.75, 0]
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas10:
+          rows:
+            _:
+              skip: true
+            c:
+              shift: [u*1.25, 0]
+            d:
+              shift: [u*0.75, 0]
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas11:
+          rows:
+            _:
+              skip: true
+            c:
+              skip: true
+            d:
+              shift: [u*0.75, 0]
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas12:
+          rows:
+            _:
+              skip: true
+            c:
+              skip: true
+            d:
+              skip: true
+            e:
+              shift: [u*0.5, 0]
+            three:
+        alphas13:
+          rows:
+            _:
+              skip: true
+            c:
+              skip: true
+            d:
+              skip: true
+            e:
+              skip: true
+            three:
+        alphas14:
+          rows:
+            caps:
+              width: 1.5
+              shift: [-((u*1.5)-u)/2, 0]
+            rshift:
+              width: 2.75
+              shift: [-((u*2.75)-u)/2, 0]
+            enter:
+              width: 2.25
+              shift: [-((2.25*u)-u)/2, 0]# TODO - the mods have two posts, alpha-most is alpha aligned, other is some distance not defined by the width of the keycap necessarily
+            ____:
+              skip: true
+            bs:
+outlines:
+  exports:
+    keys:
+      main:
+        type: keys
+        side: left
+        size: u*0.47
+        corner: (u*0.47)/2
