@@ -6,7 +6,10 @@ visual_y: u
 
 points:
   zones:
-    macros:
+    macros: &macros_alignment_pins
+      key:
+        tags:
+          barrels: true
       columns:
         left:
         right:
@@ -16,7 +19,10 @@ points:
         three:
         two:
         one:
-    alphas:
+    alphas:  &rows_alignment_pins
+      key:
+        tags:
+          barrels: true
       anchor:
         ref: macros_right_five
         shift: [u*1.5, 0]# TODO
@@ -193,11 +199,32 @@ points:
             ____:
               skip: true
             bs:
+    macros_alignment:
+      <<: *macros_alignment_pins
+      key:
+        shift: [0, -u/2]
+        tags:
+          alignment: true
+    rows_alignment:
+      <<: *rows_alignment_pins
+      key:
+        shift: [0, -u/2]
+        tags:
+          alignment: true
 outlines:
   exports:
     keys:
-      main:
+      barrels:
         type: keys
         side: left
         size: u*0.47
         corner: (u*0.47)/2
+        tags:
+          - barrels
+      alignment_pins:
+        type: keys
+        side: left
+        size: u*0.17
+        corner: (u*0.17)/2
+        tags:
+          - alignment
