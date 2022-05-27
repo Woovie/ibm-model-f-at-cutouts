@@ -1,12 +1,30 @@
 units:
-convert: 25.4
-u: 0.75 * convert
-visual_x: u
-visual_y: u
+  in: 25.4
+  u: 0.75 * 25.4
+  $default_width: 0.75 * 25.4
+  $default_height: 0.75 * 25.4
+  barrel_hole_radius: (0.45 * in)/2
+  barrel_pin_alpha_offset: (u * 2.5)
+  barrel_pin_numpad_offset: (u * 18)
+  barrel_pin_scale: 0.075 * in
+  barrel_pin_rect_x: 0.1948 * in
+  barrel_pin_rect_y: 0.1125 * in
+  barrel_pin_tip_x: 0.2273 * in
+  barrel_pin_tip_y: 0.1313 * in
+  spacebar_small_rect_height: 0.29 * in
+  spacebar_small_rect_width: 0.8625 * in
+  spacebar_small_rect_offset_y: -(u/2)+((spacebar_small_rect_height)/2)+(barrel_pin_scale/2)
+  spacebar_sides_small_rect_width: 1.4 * in
+  spacebar_sides_small_gap: 1.3565 * in
+  spacebar_sides_small_rect_offset_x: (spacebar_small_rect_width/2)+spacebar_sides_small_gap+(spacebar_sides_small_rect_width/2)
+  spacebar_sides_big_rect_height: 0.6 * in
+  spacebar_sides_big_rect_width: 0.55 * in
+  spacebar_sides_big_rect_offset_x: (spacebar_small_rect_width/2)+spacebar_sides_small_gap+spacebar_sides_small_rect_width-(spacebar_sides_big_rect_width/2)
+  spacebar_sides_big_rect_offset_y: spacebar_small_rect_offset_y+(spacebar_sides_big_rect_height/2)-(spacebar_small_rect_height/2)
 
 points:
   zones:
-    macros: &macros_alignment_pins
+    macros: &macros_copy
       key:
         tags:
           barrels: true
@@ -19,13 +37,13 @@ points:
         three:
         two:
         one:
-    alphas:  &rows_alignment_pins
+    alphas:  &alphas_copy
       key:
         tags:
           barrels: true
       anchor:
         ref: macros_right_five
-        shift: [u*1.5, 0]# TODO
+        shift: [1.125 * 25.4, 0]
       columns:
         lmods:
           rows:
@@ -33,9 +51,9 @@ points:
               width: 1.5
               shift: [((u*1.5)-u)/2, 0]
             lshift:
-              width: 2.25
-              shift: [((u*2.25)-u)/2, 0]# TODO - the mods have two posts, alpha-most is alpha aligned, other is some distance not defined by the width of the keycap necessarily
-            lctrl:
+              width: 1.25
+              shift: [((u*1.25)-u)/2, 0]
+            lctrl: # TODO pole position is that of a stepped position, not normal
               width: 1.75
               shift: [((u*1.75)-u)/2, 0]
             tab:
@@ -46,19 +64,19 @@ points:
           rows:
             _:
               skip: true
-            z:
-              shift: [((u*2.25)-u), 0]
+            iso_pipe:
+              shift: [((u*1.25)-u), 0]
             a:
               shift: [((u*1.75)-u), 0]
             q:
               shift: [((u*1.5)-u), 0]
-            two:
+            one:
         alphas2:
           rows:
             _:
               skip: true
-            x:
-              shift: [u*1.25, 0]
+            z:
+              shift: [((u*1.25)-u), 0]
             s:
               shift: [u*0.75, 0]
             w:
@@ -68,8 +86,8 @@ points:
           rows:
             _:
               skip: true
-            c:
-              shift: [u*1.25, 0]
+            x:
+              shift: [((u*1.25)-u), 0]
             d:
               shift: [u*0.75, 0]
             e:
@@ -79,8 +97,8 @@ points:
           rows:
             _:
               skip: true
-            v:
-              shift: [u*1.25, 0]
+            c:
+              shift: [((u*1.25)-u), 0]
             f:
               shift: [u*0.75, 0]
             r:
@@ -90,141 +108,262 @@ points:
           rows:
             _:
               skip: true
-            c:
-              shift: [u*1.25, 0]
-            d:
+            v:
+              shift: [((u*1.25)-u), 0]
+            g:
               shift: [u*0.75, 0]
-            e:
+            t:
               shift: [u*0.5, 0]
-            three:
+            five:
         alphas6:
           rows:
             _:
               skip: true
-            c:
-              shift: [u*1.25, 0]
-            d:
+            b:
+              shift: [((u*1.25)-u), 0]
+            h:
               shift: [u*0.75, 0]
-            e:
+            y:
               shift: [u*0.5, 0]
-            three:
+            six:
         alphas7:
           rows:
-            _:
-              skip: true
-            c:
-              shift: [u*1.25, 0]
-            d:
+            spacebar:
+            n:
+              shift: [((u*1.25)-u), 0]
+            j:
               shift: [u*0.75, 0]
-            e:
+            u:
               shift: [u*0.5, 0]
-            three:
+            seven:
         alphas8:
           rows:
             _:
               skip: true
-            c:
-              shift: [u*1.25, 0]
-            d:
+            m:
+              shift: [((u*1.25)-u), 0]
+            k:
               shift: [u*0.75, 0]
-            e:
+            i:
               shift: [u*0.5, 0]
-            three:
+            eight:
         alphas9:
           rows:
             _:
               skip: true
-            c:
-              shift: [u*1.25, 0]
-            d:
+            lt:
+              shift: [((u*1.25)-u), 0]
+            l:
               shift: [u*0.75, 0]
-            e:
+            o:
               shift: [u*0.5, 0]
-            three:
+            nine:
         alphas10:
           rows:
             _:
               skip: true
-            c:
-              shift: [u*1.25, 0]
-            d:
+            gt:
+              shift: [((u*1.25)-u), 0]
+            colon:
               shift: [u*0.75, 0]
-            e:
+            p:
               shift: [u*0.5, 0]
-            three:
+            zero:
         alphas11:
           rows:
             _:
               skip: true
-            c:
-              skip: true
-            d:
+            qm:
+              shift: [((u*1.25)-u), 0]
+            apostrophe:
               shift: [u*0.75, 0]
-            e:
+            left_bracket:
               shift: [u*0.5, 0]
-            three:
+            minus:
         alphas12:
           rows:
             _:
               skip: true
-            c:
-              skip: true
+            rshift_supp:
+              shift: [((u*1.25)-u), 0]
             d:
-              skip: true
-            e:
+              shift: [u*0.75, 0]
+            right_bracket:
               shift: [u*0.5, 0]
-            three:
+            plus:
         alphas13:
           rows:
             _:
               skip: true
-            c:
+            __:
               skip: true
-            d:
+            ___:
               skip: true
-            e:
+            ____:
               skip: true
-            three:
-        alphas14:
+            bs_left:
+        rmods:
           rows:
             caps:
               width: 1.5
               shift: [-((u*1.5)-u)/2, 0]
             rshift:
-              width: 2.75
-              shift: [-((u*2.75)-u)/2, 0]
+              width: 1.75
+              shift: [-((u*1.75)-u)/2, 0]
             enter:
-              width: 2.25
-              shift: [-((2.25*u)-u)/2, 0]# TODO - the mods have two posts, alpha-most is alpha aligned, other is some distance not defined by the width of the keycap necessarily
-            ____:
-              skip: true
-            bs:
-    macros_alignment:
-      <<: *macros_alignment_pins
+              width: 1.25
+              shift: [-((1.25*u)-u)/2, 0]
+            pipe:
+              shift: [-((u*1.5)-u)/2, 0]
+            bs_right:
+    numpad: &numpad_copy
       key:
-        shift: [0, -u/2]
+        tags:
+          barrels: true
+      anchor:
+        ref: alphas_rmods_caps
+        shift: [(1.125 * 25.4)+(((u*1.5)-u)/2), 0]
+      columns:
+        one:
+        two:
+        thr:
+        fou:
+      rows:
+        one:
+        two:
+        thr:
+        fou:
+        fiv:
+    macros_alignment:
+      <<: *macros_copy
+      anchor.shift: [0, -u/2]
+      key:
         tags:
           alignment: true
     rows_alignment:
-      <<: *rows_alignment_pins
+      <<: *alphas_copy
+      anchor.shift: [u*1.5, -u/2]
       key:
-        shift: [0, -u/2]
         tags:
           alignment: true
+    numpad_alignment:
+      <<: *numpad_copy
+      anchor.shift: [(1.125 * 25.4)+(((u*1.5)-u)/2), -u/2]
+      key:
+        tags:
+          alignment: true
+    macros_barrel_pin:
+      <<: *macros_copy
+      anchor:
+        shift: [barrel_pin_rect_x, -barrel_pin_rect_y]
+      key:
+        tags:
+          barrel_pin_rect: true
+        rotate: -30
+    macros_barrel_pin_tip:
+      <<: *macros_copy
+      anchor:
+        shift: [barrel_pin_tip_x, -barrel_pin_tip_y]
+      key:
+        tags:
+          barrel_pin_circle: true
+    alphas_barrel_pin:
+      <<: *alphas_copy
+      anchor:
+        shift: [barrel_pin_rect_x + barrel_pin_alpha_offset, -barrel_pin_rect_y]
+      key:
+        tags:
+          barrel_pin_rect: true
+        rotate: -30
+    alphas_barrel_pin_tip:
+      <<: *alphas_copy
+      anchor:
+        shift: [barrel_pin_tip_x + barrel_pin_alpha_offset, -barrel_pin_tip_y]
+      key:
+        tags:
+          barrel_pin_circle: true
+    numpad_barrel_pin:
+      <<: *numpad_copy
+      anchor:
+        shift: [barrel_pin_rect_x + barrel_pin_numpad_offset, -barrel_pin_rect_y]
+      key:
+        tags:
+          barrel_pin_rect: true
+        rotate: -30
+    numpad_barrel_pin_tip:
+      <<: *numpad_copy
+      anchor:
+        shift: [barrel_pin_tip_x + barrel_pin_numpad_offset, -barrel_pin_tip_y]
+      key:
+        tags:
+          barrel_pin_circle: true
+  key:
+    padding: u + (0.0625 * in)
 outlines:
-  exports:
-    keys:
-      barrels:
-        type: keys
-        side: left
-        size: u*0.47
-        corner: (u*0.47)/2
-        tags:
-          - barrels
-      alignment_pins:
-        type: keys
-        side: left
-        size: u*0.17
-        corner: (u*0.17)/2
-        tags:
-          - alignment
+  ibm_model_f_foam:
+    outer_edge:
+      operation: stack
+      what: rectangle
+      size: [17.375 * in, 5 * in]
+      where:
+        aggregate.parts:
+          - macros_left_five
+          - macros_left_one
+          - numpad_fou_fiv
+          - numpad_fou_one
+        shift: [0, (1/16) * in]
+    barrels:
+      operation: stack
+      what: circle
+      radius: barrel_hole_radius
+      where: barrels
+    barrel_pin:
+      operation: stack
+      what: rectangle
+      size: [barrel_pin_scale, barrel_pin_scale]
+      where: barrel_pin_rect
+    barrel_pin_tip:
+      operation: stack
+      what: circle
+      radius: barrel_pin_scale/2
+      where: barrel_pin_circle
+    alignment_pins:
+      operation: stack
+      what: circle
+      radius: barrel_pin_scale/2
+      where: alignment
+    spacebar_center_rect:
+      operation: stack
+      what: rectangle
+      size: [spacebar_small_rect_width, spacebar_small_rect_height]
+      where:
+        ref: alphas_alphas7_spacebar
+        shift: [0, spacebar_small_rect_offset_y]
+    spacebar_left_small_rect:
+      operation: stack
+      what: rectangle
+      size: [spacebar_sides_small_rect_width, spacebar_small_rect_height]
+      where:
+        ref: alphas_alphas7_spacebar
+        shift: [-spacebar_sides_small_rect_offset_x, spacebar_small_rect_offset_y]
+    spacebar_left_big_rect:
+      operation: stack
+      what: rectangle
+      size: [spacebar_sides_big_rect_width, spacebar_sides_big_rect_height]
+      where:
+        ref: alphas_alphas7_spacebar
+        shift: [-spacebar_sides_big_rect_offset_x, spacebar_sides_big_rect_offset_y]
+    spacebar_right_small_rect:
+      operation: stack
+      what: rectangle
+      size: [spacebar_sides_small_rect_width, spacebar_small_rect_height]
+      where:
+        ref: alphas_alphas7_spacebar
+        shift: [spacebar_sides_small_rect_offset_x, spacebar_small_rect_offset_y]
+    spacebar_right_big_rect:
+      operation: stack
+      what: rectangle
+      size: [spacebar_sides_big_rect_width, spacebar_sides_big_rect_height]
+      where:
+        ref: alphas_alphas7_spacebar
+        shift: [spacebar_sides_big_rect_offset_x, spacebar_sides_big_rect_offset_y]
