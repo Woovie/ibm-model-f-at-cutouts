@@ -259,7 +259,6 @@ points:
       key:
         tags:
           barrel_pin_rect: true
-        rotate: -30
     macros_barrel_pin_tip:
       <<: *macros_copy
       anchor:
@@ -274,7 +273,6 @@ points:
       key:
         tags:
           barrel_pin_rect: true
-        rotate: -30
     alphas_barrel_pin_tip:
       <<: *alphas_copy
       anchor:
@@ -289,7 +287,6 @@ points:
       key:
         tags:
           barrel_pin_rect: true
-        rotate: -30
     numpad_barrel_pin_tip:
       <<: *numpad_copy
       anchor:
@@ -313,17 +310,19 @@ outlines:
           - numpad_fou_one
         shift: [0, (1/16) * in]
     barrels:
-      operation: stack
+      operation: subtract
       what: circle
       radius: barrel_hole_radius
       where: barrels
     barrel_pin:
-      operation: stack
+      operation: subtract
       what: rectangle
       size: [barrel_pin_scale, barrel_pin_scale]
       where: barrel_pin_rect
+      adjust:
+        rotate: -30
     barrel_pin_tip:
-      operation: stack
+      operation: subtract
       what: circle
       radius: barrel_pin_scale/2
       where: barrel_pin_circle
@@ -333,35 +332,35 @@ outlines:
       radius: barrel_pin_scale/2
       where: alignment
     spacebar_center_rect:
-      operation: stack
+      operation: subtract
       what: rectangle
       size: [spacebar_small_rect_width, spacebar_small_rect_height]
       where:
         ref: alphas_alphas7_spacebar
         shift: [0, spacebar_small_rect_offset_y]
     spacebar_left_small_rect:
-      operation: stack
+      operation: subtract
       what: rectangle
       size: [spacebar_sides_small_rect_width, spacebar_small_rect_height]
       where:
         ref: alphas_alphas7_spacebar
         shift: [-spacebar_sides_small_rect_offset_x, spacebar_small_rect_offset_y]
     spacebar_left_big_rect:
-      operation: stack
+      operation: subtract
       what: rectangle
       size: [spacebar_sides_big_rect_width, spacebar_sides_big_rect_height]
       where:
         ref: alphas_alphas7_spacebar
         shift: [-spacebar_sides_big_rect_offset_x, spacebar_sides_big_rect_offset_y]
     spacebar_right_small_rect:
-      operation: stack
+      operation: subtract
       what: rectangle
       size: [spacebar_sides_small_rect_width, spacebar_small_rect_height]
       where:
         ref: alphas_alphas7_spacebar
         shift: [spacebar_sides_small_rect_offset_x, spacebar_small_rect_offset_y]
     spacebar_right_big_rect:
-      operation: stack
+      operation: subtract
       what: rectangle
       size: [spacebar_sides_big_rect_width, spacebar_sides_big_rect_height]
       where:
